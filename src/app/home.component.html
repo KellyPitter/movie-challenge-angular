@@ -1,0 +1,14 @@
+<h2>🎥 Bienvenida a Movie Challenge</h2>
+<p>Aquí verás la lista de películas</p>
+
+
+<h2>🎬 Lista de Películas</h2>
+
+<ul>
+  <li *ngFor="let movie of movies">
+    <a [routerLink]="['/movie', movie.id]">
+      <strong>{{ movie.title }}</strong>
+    </a>
+    ({{ movie.release_date ? (movie.release_date | date:'yyyy') : 'Sin fecha' }})
+  </li>
+</ul>
