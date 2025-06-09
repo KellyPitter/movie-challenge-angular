@@ -35,4 +35,12 @@ export class MovieService {
       `${this.API_URL}/discover/movie?api_key=${this.API_KEY}&language=es-ES&with_genres=${genreId}`
     );
   }
+
+  searchMovies(query: string) {
+    return this.http.get<{ results: Movie[] }>(
+      `${this.API_URL}/search/movie?query=${encodeURIComponent(
+        query
+      )}&api_key=${this.API_KEY}`
+    );
+  }
 }

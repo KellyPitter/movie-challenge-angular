@@ -35,6 +35,29 @@ label[for="genre-select"] {
   display: block;
 }
 
+/* Buscar */
+.search-bar {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+}
+
+.search-bar button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #ff4081;
+  color: white;
+  cursor: pointer;
+}
+
 
 /* Títulos */
 h1, h2 {

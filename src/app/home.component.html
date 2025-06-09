@@ -2,16 +2,30 @@
 <p>Aquí verás la lista de películas mas populares del 2025</p>
 
 <!-- 🎨 Filtro de géneros -->
-<label for="genre-select">Filtrar por género:</label>
-<select id="genre-select" [(ngModel)]="selectedGenreId" (change)="onGenreChange()">
-  <option [ngValue]="null">Todos</option>
-  <option *ngFor="let genre of genres" [ngValue]="genre.id">
-    {{ genre.name }}
-  </option>
-</select>
+<div class="filter-container">
+  <label for="genre-select">Filtrar por género:</label>
+  <select id="genre-select" [(ngModel)]="selectedGenreId" (change)="onGenreChange()">
+    <option [ngValue]="null">Todos</option>
+    <option *ngFor="let genre of genres" [ngValue]="genre.id">
+      {{ genre.name }}
+    </option>
+  </select>
+</div>
+
+<div class="search-bar">
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    (keyup.enter)="onSearch()"
+    placeholder="🔍 Buscar película por nombre"
+  />
+  <button (click)="onSearch()">Buscar</button>
+</div>
 
 <h1>Películas Populares</h1>
-<app-movie-grid [movies]="topMovies"></app-movie-grid>
+<app-movie-grid [movies]="movies"></app-movie-grid>
+
+
 
 <h2>🎬 Lista de Películas</h2>
 
