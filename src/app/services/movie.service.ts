@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Movie } from '../models/movie.model';
+import { ApiResponse, Movie } from '../models/movie.model';
 
 @Injectable({
   providedIn: 'root',
@@ -18,13 +18,7 @@ export class MovieService {
     );
   }
 
-  getMovieById(id: string): Observable<any> {
-    return this.http.get(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=c109ee6b21ec51892887f1bf9b18bf3a&language=es-ES`
-    );
-  }
-
-  getMovieDetails(id: string) {
+  getMovieById(id: string): Observable<Movie> {
     return this.http.get<Movie>(
       `${this.API_URL}/movie/${id}?api_key=${this.API_KEY}&language=es-ES`
     );

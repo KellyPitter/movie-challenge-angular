@@ -11,7 +11,7 @@ import { Movie } from '../models/movie.model';
   templateUrl: './movie-detail.component.html',
 })
 export class MovieDetailComponent implements OnInit {
-  movie: any = null;
+  movie!: Movie;
 
   constructor(
     private route: ActivatedRoute,

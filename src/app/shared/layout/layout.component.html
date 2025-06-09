@@ -1,0 +1,23 @@
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">
+    🎥 Movie Challenge
+  </div>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="Buscar película..."
+    />
+    <button (click)="searchMovie()">🔍</button>
+  </div>
+</header>
+
+<!-- SLOT PARA CONTENIDO DINÁMICO -->
+<router-outlet></router-outlet>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2025 Movie Challenge. Desarrollado con 💜 por Kelly.</p>
+</footer>

@@ -1,15 +1,23 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
-import { MovieDetailComponent } from './pages/movie-detail.component';
+import { LayoutComponent } from './shared/layout/layout.component';
 
-export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: '', component: HomeComponent },
+export const appRoutes: Routes = [
   {
-    path: 'movie/:id',
-    loadComponent: () =>
-      import('./pages/movie-detail.component').then(
-        (m) => m.MovieDetailComponent
-      ),
+    path: '',
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        component: HomeComponent,
+      },
+      {
+        path: 'movie/:id',
+        loadComponent: () =>
+          import('./pages/movie-detail.component').then(
+            (m) => m.MovieDetailComponent
+          ),
+      },
+    ],
   },
 ];
