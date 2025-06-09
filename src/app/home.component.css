@@ -7,6 +7,35 @@
   min-height: 100vh;
 }
 
+/* Contenedor del filtro */
+#genre-select {
+  background-color: #2b2b2b;      /* Fondo oscuro */
+  color: #ffffff;                 /* Letras claras */
+  border: 1px solid #444;         /* Borde sutil */
+  border-radius: 5px;             /* Esquinas redondeadas */
+  padding: 8px 12px;              /* Espaciado interno */
+  font-size: 16px;
+  margin: 10px 0;
+  width: 100%;                    /* Ocupa todo el ancho disponible */
+  max-width: 300px;               /* Máximo tamaño para que se vea elegante */
+  transition: border-color 0.3s ease;
+}
+
+#genre-select:focus {
+  outline: none;
+  border-color: #00c6ff;          /* Color al enfocar */
+  box-shadow: 0 0 5px #00c6ff44;  /* Sombra azul suave */
+}
+
+/* Etiqueta opcional */
+label[for="genre-select"] {
+  color: #ddd;
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+
 /* Títulos */
 h1, h2 {
   color: #ffffff;
