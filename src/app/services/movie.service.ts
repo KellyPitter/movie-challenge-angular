@@ -43,4 +43,10 @@ export class MovieService {
       )}&api_key=${this.API_KEY}`
     );
   }
+
+  getLatestMovies(year: number): Observable<{ results: Movie[] }> {
+    return this.http.get<{ results: Movie[] }>(
+      `${this.API_URL}/discover/movie?api_key=${this.API_KEY}&language=es-ES&sort_by=release_date.desc&year=${year}`
+    );
+  }
 }

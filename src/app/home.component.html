@@ -1,39 +1,39 @@
 <h2>🎥 Bienvenidos a Movie Challenge</h2>
-<p>Aquí verás la lista de películas mas populares del 2025</p>
+<p>Aquí verás la lista de películas más populares del 2025</p>
 
-<!-- 🎨 Filtro de géneros -->
-<div class="filter-container">
-  <label for="genre-select">Filtrar por género:</label>
-  <select id="genre-select" [(ngModel)]="selectedGenreId" (change)="onGenreChange()">
-    <option [ngValue]="null">Todos</option>
-    <option *ngFor="let genre of genres" [ngValue]="genre.id">
-      {{ genre.name }}
-    </option>
-  </select>
+<!-- 🎯 Filtro y Búsqueda combinados -->
+<div class="controls-wrapper">
+  <div class="control">
+    <select id="genre-select" [(ngModel)]="selectedGenreId" (change)="onGenreChange()">
+      <option [ngValue]="null">🎬 Todos los géneros</option>
+      <option *ngFor="let genre of genres" [ngValue]="genre.id">
+        {{ genre.name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="control">
+    <div class="search-box">
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="onSearch()"
+        placeholder="🔍 Buscar película..."
+      />
+      <button (click)="onSearch()">Buscar</button>
+    </div>
+  </div>
 </div>
 
-<div class="search-bar">
-  <input
-    type="text"
-    [(ngModel)]="searchQuery"
-    (keyup.enter)="onSearch()"
-    placeholder="🔍 Buscar película por nombre"
-  />
-  <button (click)="onSearch()">Buscar</button>
-</div>
 
-<h1>Películas Populares</h1>
+
+
+<!-- ✅ Top 10 recientes -->
+<h2>🔥 Estrenos del {{ currentYear }}</h2>
+<app-movie-grid [movies]="topMovies"></app-movie-grid>
+
+<!-- 🎬 Películas filtradas o populares -->
+<h2>🎬 Películas Populares</h2>
 <app-movie-grid [movies]="movies"></app-movie-grid>
 
-
-
-<h2>🎬 Lista de Películas</h2>
-
-<ul>
-  <li *ngFor="let movie of movies">
-    <a [routerLink]="['/movie', movie.id]">
-      <strong>{{ movie.title }}</strong>
-    </a>
-    ({{ movie.release_date ? (movie.release_date | date:'yyyy') : 'Sin fecha' }})
-  </li>
-</ul>
+<!-- Opcional: Lista simple con routerLink -->
