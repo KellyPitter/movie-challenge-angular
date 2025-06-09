@@ -1,0 +1,11 @@
+<div class="movie-grid">
+  <div class="movie-item" *ngFor="let movie of movies">
+    <a [routerLink]="['/movie', movie.id]">
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+        [alt]="movie.title"
+      />
+      <h3>{{ movie.title }}</h3>
+    </a>
+  </div>
+</div>

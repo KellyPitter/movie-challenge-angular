@@ -40,3 +40,32 @@
   text-align: center;
   font-size: 0.9rem;
 }
+
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+    gap: 1rem; /* espacio entre logo y búsqueda */
+  }
+
+  .logo {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .search-bar {
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .search-bar input {
+    flex: 1; /* que el input tome todo el ancho posible */
+    min-width: 0; /* para evitar overflow */
+  }
+
+  .search-bar button {
+    padding: 0.5rem 1rem;
+  }
+}
