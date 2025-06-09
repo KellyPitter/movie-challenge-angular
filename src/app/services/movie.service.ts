@@ -23,4 +23,16 @@ export class MovieService {
       `${this.API_URL}/movie/${id}?api_key=${this.API_KEY}&language=es-ES`
     );
   }
+
+  getGenres() {
+    return this.http.get<{ genres: { id: number; name: string }[] }>(
+      `${this.API_URL}/genre/movie/list?api_key=${this.API_KEY}&language=es-ES`
+    );
+  }
+
+  getMoviesByGenre(genreId: number) {
+    return this.http.get<{ results: Movie[] }>(
+      `${this.API_URL}/discover/movie?api_key=${this.API_KEY}&language=es-ES&with_genres=${genreId}`
+    );
+  }
 }

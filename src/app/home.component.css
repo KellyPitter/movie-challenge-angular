@@ -1,0 +1,41 @@
+/* Fondo y estilos del contenedor */
+:host {
+  display: block;
+  background-color: #121212;
+  color: #f0f0f0;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Títulos */
+h1, h2 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* Párrafos */
+p {
+  color: #cccccc;
+  font-size: 1.1rem;
+}
+
+/* Lista de películas */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: #f19c35;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffcc70;
+  text-decoration: underline;
+}

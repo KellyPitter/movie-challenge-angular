@@ -1,0 +1,51 @@
+:host {
+  display: block;
+  background-color: #121212;
+  color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+h2 {
+  color: #ffcc00;
+}
+
+p {
+  color: #ccc;
+}
+
+.movie-detail {
+  background-color: #1a1a1a; /* fondo oscuro */
+  color: #f0f0f0; /* letras claras */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  max-width: 700px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.movie-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f19c35; /* título en color llamativo */
+}
+
+.movie-detail p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.movie-detail strong {
+  color: #ffd369;
+}
+
+.movie-detail img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  margin: 1.5rem 0;
+}
